@@ -1,0 +1,10 @@
+body {
+    padding-top:10px;
+}
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  .toolbar a {
+      color: white;
+      text-decoration: none;
+  }

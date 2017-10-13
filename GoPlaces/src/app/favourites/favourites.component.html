@@ -1,0 +1,53 @@
+<p>
+  favourites works!
+</p>
+<div *ngIf="favArray.length==0">
+  <p>No favourites</p>
+</div>
+
+<ng-container *ngIf="!rerender">
+<ul class="list-group">
+  <li *ngFor="let result of favArray" class="list-group-item">
+    <div class="col-12"> {{result.placeName}}
+      <button type="button"class="float-right btn btn-danger" (click)="deleteFav(result)">delete</button>
+      <button type="button"class="float-right btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="getResult(result)">
+          update</button>
+    </div>
+    <div class="col-12">{{result.userComments}}</div>
+    
+    <div class="col-12">{{result.id}}</div>
+  </li>
+
+  <div class="collapse" id="updatefield">
+    
+    <button type="button" data-toggle="collapse" data-target="#updatefield" class="btn btn-primary" (click)="putFav(textBox.value)">save details </button>
+
+  </div>
+  
+  
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+  
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                     
+                      <h4 class="modal-title">enter comments to update</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <textarea #textBox class="form-control" type="text" name="usercomment" rows="3"></textarea>  
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal" (click)="putFav(textBox.value)">save changes</button>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  
+  
+</ul>
+</ng-container>
+

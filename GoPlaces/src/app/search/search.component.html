@@ -1,0 +1,35 @@
+<!--<section class="filter-wrapper">
+    <div class="keyword-wrapper">
+   <input #searchBox type="text"[formControl]="queryField" id="keyword" placeholder="Search for places."
+     />
+     <input type="submit" value="search"  
+     (click)="onSubmitSearch(searchBox.value)"/>
+     </div>
+     <div>
+     <ul class="filter-select">
+        <li  *ngFor="let result of resultssug['predictions']" class="filter-select-list"
+        (click)="onSubmitSearch(result.description)">
+        <p class="artist-name"> {{result.description}}</p>
+        <span class="tags"></span>
+      
+      </ul>
+    </div>
+    
+
+   </section> -->
+   <!--<app-display-results [displayResultsArray]="results" ></app-display-results>-->
+   
+   <div class="example-form">
+    <mat-form-field class="example-full-width mat-elevation-z10">
+      <input #searchbox type="text" placeholder="search" aria-label="Number" matInput [formControl]="queryField" (keyup.enter)="onSubmitSearch(searchbox.value) ">
+    </mat-form-field>
+      <!--<mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of  resultssug['predictions']" 
+        [value]="option" [routerLink]="['/results']" (click)="onSubmitSearch(option.description)  ">
+          {{ option.description }}
+        </mat-option>
+      </mat-autocomplete>
+    
+  </div>
+  <p>search componet</p>-->
+  

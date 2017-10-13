@@ -1,0 +1,36 @@
+
+  
+  <p>
+    routed to display results component
+  </p>
+  <mat-grid-list cols="3"rowHeight="2:1" >
+    <mat-grid-tile  class="listWrapper"
+    *ngFor="let result of displayResultsArray['results']"
+    >
+  <div  >
+    <mat-card class="z-depth"  >
+   
+        <mat-card-title>
+      {{result.name | slice:0:10}}<img  class="iconImage"src='{{result.icon}}'>
+      
+    </mat-card-title>
+  
+  
+    
+    <mat-card-content>
+      {{result.formatted_address}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['moredetails',result.place_id]">more details</button>
+    </mat-card-actions>
+    </mat-card>
+  </div>
+       
+    
+  </mat-grid-tile>
+  </mat-grid-list>
+  
+  
+
+  
+

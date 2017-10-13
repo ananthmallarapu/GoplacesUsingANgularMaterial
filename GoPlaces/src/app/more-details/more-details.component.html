@@ -1,0 +1,53 @@
+<p>
+  more-details works!
+</p>
+
+<div *ngIf="displayResultsArray" > 
+  <div class="form-group">
+    
+  <button class="btn btn-primary" data-toggle="collapse" data-target="#usercomment">
+  
+     
+    enter user comments
+  
+  </button>
+    
+  <div class="collapse"id="usercomment">
+  <textarea #textBox class="form-control"  type="text" name="usercomment" rows="3" ></textarea>
+  <div><button type="button"  class="btn btn-success" (click)="goToFav(textBox.value)"
+    [disabled]="isMarkedFav"  >save details </button></div>
+</div>
+    
+</div>
+    <div class=card-block>
+    <h4 class="card-title">
+        {{displayResultsArray['result'].name }}</h4>
+        <h4>Address</h4>
+<p class="card-text">
+  {{displayResultsArray['result'].formatted_address}}</p>
+  <h4>Contact info</h4>
+<p class="card-text">
+  {{displayResultsArray['result'].formatted_phone_number}}</p>
+  <h4>rating</h4>
+<p class="card-text">{{displayResultsArray['result'].rating}}</p>
+<h4>website</h4>
+<p class="card-text">{{displayResultsArray['result'].website}}</p>
+<div class="row">
+  <div *ngFor=" let rating of displayResultsArray['result'].reviews" class="card col-sm-4">
+     <!-- <img class="card-img-top  img-fluid " 
+      *ngIf="rating.profile_photo_url" 
+      src="{{rating.profile_photo_url}}">-->
+    <div class="card-block">
+        <p class="card-title">
+          {{rating.author_name }}</p>
+          <p class="card-text">{{rating.rating}}</p>
+          <p class="card-text">{{rating.text}}</p>
+           
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
